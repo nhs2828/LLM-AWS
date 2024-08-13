@@ -6,11 +6,9 @@ from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 from dotenv import load_dotenv
 from huggingface_hub import login
+from tools import *
 
-VECTOR_LOCAL ='vectorstore'
-PDF_FOLDER = 'pdfs'
 MODEL_NAME = 'google/gemma-2-2b'
-
 
 def main():
     # Load environment variables for API keys
