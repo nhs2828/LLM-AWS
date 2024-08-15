@@ -1,9 +1,0 @@
-boto3
-langchain
-langchain_community
-pypdf
-python-dotenv
-faiss-cpu
-sentence-transformers==2.2.2
-InstructorEmbedding
-protobuf

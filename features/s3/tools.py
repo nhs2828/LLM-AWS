@@ -5,6 +5,7 @@ VECTOR_LOCAL ='vectorstore'
 CURRENT_DIR = os.getcwd()
 PDF_FOLDER = 'pdfs'
 BUCKET_LLM = 'llms3bucket'
+EMB_MODEL_DIR = 'emb_models'
 
 def upload_file(s3, filePath, prefix=''):
     # extract file name
