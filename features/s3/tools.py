@@ -3,7 +3,7 @@ import boto3
 
 VECTOR_LOCAL ='vectorstore'
 CURRENT_DIR = os.getcwd()
-PDF_FOLDER = 'pdfs'
+DOCS_FOLDER = 'pdfs'
 BUCKET_LLM = 'llms3bucket'
 EMB_MODEL_DIR = 'emb_models'
 
