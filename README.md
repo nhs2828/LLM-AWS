@@ -4,7 +4,7 @@ This is my project on AWS eco-system
 Diagram of the architecture
 
 # Context:
-We would like to have a server that could perform Q-A enchanced by RAG framework. The FAISS vectorstore for RAG is updated automatically when there is change in the documents database in order to stay relevant.
+We would like to have a server that could perform Q-A enchanced by RAG framework. The FAISS vectorstore for RAG is updated automatically when there are changes in the documents database, in order to stay relevant.
 
 # Overview
 1. When users send questions, EC2 instance will generate the answer using RAG framework with the LLM model and vectorstore fetched from S3 Bucket.
