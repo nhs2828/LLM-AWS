@@ -1,6 +1,6 @@
 This is my project on AWS eco-system
 
-![RAG](https://github.com/user-attachments/assets/5f456dd5-3053-48f4-a8e9-647d219d93f8)
+![RAG](https://github.com/user-attachments/assets/43a014c9-0e55-4726-b4cb-d77d9400d6a1)
 Diagram of the architecture
 
 # Context:
