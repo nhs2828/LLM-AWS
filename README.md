@@ -8,10 +8,7 @@ We would like to have a server that could perform Q-A enchanced by RAG framework
 
 # Demonstration
 
-![demonstration](https://github.com/user-attachments/assets/b7661539-00e1-4b2d-a3f4-1759165883c3)
-
-
-
+![demonstration_RAG](https://github.com/user-attachments/assets/1d5b5f20-a17d-4fbb-99c4-eb6dfbe10b9b)
 
 # Overview
 1. When users send questions, EC2 instance will generate the answers using RAG framework with the LLM model.
