@@ -6,6 +6,13 @@ Diagram of the architecture
 # Context:
 We would like to have a server that could perform Q-A enchanced by RAG framework. The FAISS vectorstore for RAG is updated automatically when there are changes in the documents database, in order to stay relevant.
 
+# Demonstration
+
+![demonstration](https://github.com/user-attachments/assets/b7661539-00e1-4b2d-a3f4-1759165883c3)
+
+
+
+
 # Overview
 1. When users send questions, EC2 instance will generate the answers using RAG framework with the LLM model.
 2. We could update the documents stored in S3 bucket. Cron job from EventBridge will trigger Lambda function to update the vectorstore automatically as scheduled, using embedding model from Bedrock.
