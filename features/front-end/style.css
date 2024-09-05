@@ -1,0 +1,101 @@
+.bot {
+    border: 3px solid #da1a1a;
+    border-radius: 10px;
+    margin: 50px auto;
+    overflow: hidden;
+    width: 500px;
+    overflow-y: clip;
+    height: 600px;
+    background: rgb(255, 255, 255);
+    background-size: contain;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  header h1 {
+    color: #fff;
+    margin: 0;
+  }
+
+  header {
+    background-color: #b24949;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 7px 7px 0 0;
+  }
+
+  .box {
+    padding: 15px;
+    list-style: none;
+    overflow-y: auto;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box li {
+    margin-bottom: 10px;
+  }
+
+  .bot-rep p {
+    background-color: #eaeaea;
+  }
+
+  .user-mess {
+    display: flex;
+    justify-content: flex-end; /* Ensures content inside is aligned to the right */
+  }
+
+  .user-mess p {
+    background-color: #29c489;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%; /* Optional: Limits the width of the message */
+    word-wrap: break-word; /* Ensures long words or URLs break onto a new line */
+    margin: 5px 0;
+  }
+
+  .chat p {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+
+  .user-input {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+  .user-input textarea {
+    width: 470px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    resize: none;
+    outline: none;
+    overflow-y: scroll;
+    background-color: #dcdcdc85;
+    font-size: 16px;
+    color: rgb(19, 20, 19);
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: -5px;
+    height: 30px;
+  }
+
+  #sendQuestion {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 7px;
+    background-color: #a74444;
+    cursor: pointer;
+    color: white;
+    margin-top: 12px;
+  }
