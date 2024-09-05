@@ -14,6 +14,7 @@ We would like to have a server that could perform Q-A enchanced by RAG framework
 1. When users send questions, EC2 instance will generate the answers using RAG framework with the LLM model.
 2. We could update the documents stored in S3 bucket. Cron job from EventBridge will trigger Lambda function to update the vectorstore automatically as scheduled, using embedding model from Bedrock.
 3. EC2 instance, deployed using Docker to ensure consistent setup. This is where LLM generates answers for users's questions using RAG framework. The LLM is taken from HuggingFace, configured with quantization to reduce memory footprints.
+4. FAISS for indexing task, because FAISS offers the possibility to modify (merge, delete, ..) vectorstore. Also the performance of FAISS is better than other algorithms I have tested
 
 # Specs:
 1. LLM choice: `Mistral-7B-Instruct-v0.3`
@@ -24,5 +25,11 @@ We would like to have a server that could perform Q-A enchanced by RAG framework
   - I used this model from AWS Bedrock. Since the embedding task is performed in Lambda function, calling saved models or init from `HuggingFaceInstructEmbeddings` would consume lots of time (which is a billing factor of Lmabda function)
 3. Both Lambda function and EC2 instance are dockerized to ensure consistent set up.
  - EC2 instance: `g4dn.xlarge` 4vCPU 16Gb Memory, I used quantization 4 bits to reduce memory footprints so this is enough for `Mistral-7B`
+
+# Possible Improvement
+1. Auto scaling + Elastic Load Balancer to scale in and out based on demanded, reduce cost.
+2. User chat history:
+ - Enable chat flow with the history of chat (use Flan-T5 fine-tuned on Summerization task to summerize recent chat logs and put into prompt as another section)
+ - Save user chat (need to ask for accord of users), for further trend, behavior, analysis (Kinesis, S3, Athena)
 
 
