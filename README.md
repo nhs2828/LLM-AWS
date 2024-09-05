@@ -1,4 +1,4 @@
-This is my project on AWS eco-system
+This is my RAG project on AWS eco-system
 
 ![RAG](https://github.com/user-attachments/assets/43a014c9-0e55-4726-b4cb-d77d9400d6a1)
 Diagram of the architecture
@@ -14,4 +14,15 @@ We would like to have a server that could perform Q-A enchanced by RAG framework
 1. When users send questions, EC2 instance will generate the answers using RAG framework with the LLM model.
 2. We could update the documents stored in S3 bucket. Cron job from EventBridge will trigger Lambda function to update the vectorstore automatically as scheduled, using embedding model from Bedrock.
 3. EC2 instance, deployed using Docker to ensure consistent setup. This is where LLM generates answers for users's questions using RAG framework. The LLM is taken from HuggingFace, configured with quantization to reduce memory footprints.
+
+# Specs:
+1. LLM choice: `Mistral-7B-Instruct-v0.3`
+  - I have tried different models, for me Mistral-7B performs well with different RAG techniques (multi-queries, fusion, ...)
+  - I used the model from `transformers` to be able to have more controls on the model (quantization, generation, fine-tune, ...)
+  - It is possible to call LLM using HuggingFace API to reduce setup time, but have less control, higher delay in gererating task, more traffic will go through Internet
+2. Embedding model: `Cohere English`
+  - I used this model from AWS Bedrock. Since the embedding task is performed in Lambda function, calling saved models or init from `HuggingFaceInstructEmbeddings` would consume lots of time (which is a billing factor of Lmabda function)
+3. Both Lambda function and EC2 instance are dockerized to ensure consistent set up.
+ - EC2 instance: `g4dn.xlarge` 4vCPU 16Gb Memory, I used quantization 4 bits to reduce memory footprints so this is enough for `Mistral-7B`
+
 
