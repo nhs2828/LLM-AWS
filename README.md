@@ -27,6 +27,20 @@ We would like to have a server that could perform Q-A enchanced by RAG framework
 3. Both Lambda function and EC2 instance are dockerized to ensure consistent set up.
  - EC2 instance: `g4dn.xlarge` 4vCPU 16Gb Memory, I used quantization 4 bits to reduce memory footprints so this is enough for `Mistral-7B`
 
+# Summerize the steps:
+1. Set up S3 bucket with appropriate access policies
+   - Documents
+   - FAISS vectorstore
+   - Saved LLM model or embedding model if we want to reduce setup time
+3. Set up Lamda function with appropriate IAM role (Bedrock and S3)
+   - Update FAISS vectorstore in S3 based on the update of Documents on S3
+5. Set up Cron job to run Lambda function in a schedule
+   - Daily, once a week, ...
+6. Set up Secrets Manager for API keys
+7. Set up EC2 instance with appropriate IAM role (S3, Bedrock)
+   Get API keys to set up model
+   Generate replies for question retrieved from front-end
+
 # Possible Improvement
 1. Auto scaling + Elastic Load Balancer to scale in and out based on demanded, reduce cost.
 2. User chat history:
